@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>小学语文（统编版）古诗词全表 · 112 首</title>
+<style>
+  :root {
+    --ink: #2e2a23;
+    --ink-soft: #6d6455;
+    --ink-faint: #a2977f;
+    --paper: #f4efe2;
+    --card: #fffdf6;
+    --line: #e3d9c1;
+    --accent: #a83a2b;   /* 朱砂红 */
+    --gold: #bfa05c;
+    --c-wu: #b07a3c;     /* 五言 赭 */
+    --c-qi: #3f7182;     /* 七言 青 */
+    --c-ci: #7e5fa8;     /* 词 紫 */
+    --c-yue: #5f8c58;    /* 乐府民歌 绿 */
+    --c-si: #9a958c;     /* 四言 灰 */
+    --shadow: 0 1px 2px rgba(70,58,34,.05), 0 6px 20px rgba(70,58,34,.07);
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background-color: var(--paper);
+    background-image:
+      radial-gradient(1200px 500px at 15% -5%, rgba(196,168,116,.10), transparent 60%),
+      radial-gradient(1000px 500px at 100% 0%, rgba(160,120,70,.08), transparent 55%),
+      repeating-linear-gradient(0deg, rgba(120,100,70,.016) 0 1px, transparent 1px 3px);
+    font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", sans-serif;
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection { background: rgba(168,58,43,.16); }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: #d7caab; border-radius: 6px; border: 2px solid var(--paper); }
+  ::-webkit-scrollbar-thumb:hover { background: #c6b78f; }
+  ::-webkit-scrollbar-track { background: transparent; }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 44px 24px 96px; }
+  .wrap::before {
+    content: ""; display: block; height: 4px; border-radius: 2px; margin-bottom: 40px;
+    background: linear-gradient(90deg, transparent, var(--accent) 25%, var(--gold) 50%, var(--accent) 75%, transparent);
+  }
+
+  header { text-align: center; margin-bottom: 30px; }
+  .seal {
+    width: 46px; height: 46px; margin: 0 auto 16px;
+    background: var(--accent); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Kaiti SC", "STKaiti", "KaiTi", serif;
+    font-size: 26px; line-height: 1;
+    border-radius: 8px;
+    box-shadow: inset 0 0 0 2px rgba(255,255,255,.28), 0 3px 8px rgba(168,58,43,.28);
+  }
+  header h1 {
+    font-family: "Kaiti SC", "STKaiti", "KaiTi", "Songti SC", serif;
+    font-size: 34px; font-weight: 700; margin: 0; letter-spacing: 4px; color: var(--ink);
+  }
+  .divider { display: flex; align-items: center; justify-content: center; gap: 10px; margin: 18px auto 16px; }
+  .divider::before, .divider::after { content: ""; width: 100px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--line)); }
+  .divider::after { background: linear-gradient(90deg, var(--line), transparent); }
+  .divider .diamond { color: var(--gold); font-size: 9px; line-height: 1; }
+  header .sub { color: var(--ink-soft); font-size: 14px; letter-spacing: 1px; }
+  header .src { font-size: 12px; color: var(--ink-faint); margin-top: 8px; }
+
+  /* 统计卡片 */
+  .stats { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-bottom: 24px; }
+  .stat-card {
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px;
+    padding: 15px 22px; min-width: 92px; text-align: center;
+    box-shadow: var(--shadow); position: relative; overflow: hidden;
+    transition: transform .18s ease, box-shadow .18s ease;
+  }
+  .stat-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; }
+  .stat-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(70,58,34,.12); }
+  .stat-card .num { font-size: 30px; font-weight: 700; font-family: Georgia, "Times New Roman", serif; line-height: 1.05; }
+  .stat-card .lbl { font-size: 12px; color: var(--ink-soft); letter-spacing: 2px; margin-top: 3px; }
+  .stat-card.cat-其他::before { background: var(--accent); }
+  .stat-card.cat-五言::before { background: var(--c-wu); }
+  .stat-card.cat-七言::before { background: var(--c-qi); }
+  .stat-card.cat-词::before { background: var(--c-ci); }
+  .stat-card.cat-乐府::before, .stat-card.cat-民歌::before { background: var(--c-yue); }
+  .stat-card.cat-四言::before { background: var(--c-si); }
+  .stat-card.cat-其他 .num { color: var(--accent); }
+  .stat-card.cat-五言 .num { color: var(--c-wu); }
+  .stat-card.cat-七言 .num { color: var(--c-qi); }
+  .stat-card.cat-词 .num { color: var(--c-ci); }
+  .stat-card.cat-乐府 .num, .stat-card.cat-民歌 .num { color: var(--c-yue); }
+  .stat-card.cat-四言 .num { color: var(--c-si); }
+
+  /* 分布元信息 */
+  .meta {
+    text-align: center; margin-bottom: 24px; padding: 16px 20px;
+    background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow);
+  }
+  .meta .row { margin: 6px 0; }
+  .meta .label { font-size: 12px; color: var(--ink-faint); margin-right: 8px; letter-spacing: 1px; }
+  .dyn-chip { display: inline-block; background: #f8f2e2; border: 1px solid var(--line);
+    border-radius: 999px; padding: 4px 14px; margin: 3px 4px; font-size: 13px; transition: border-color .15s ease; }
+  .dyn-chip:hover { border-color: var(--c-qi); }
+  .dyn-chip b { color: var(--c-qi); }
+  .author-chip { display: inline-block; background: #f2ead6; border-radius: 999px;
+    padding: 3px 12px; margin: 2px 3px; font-size: 12px; color: var(--ink-soft); }
+  .author-chip em { font-style: normal; color: var(--accent); margin-left: 4px; font-weight: 700; }
+
+  /* 工具栏 */
+  .toolbar {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(244,239,226,.82);
+    -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px);
+    padding: 12px 0; border-bottom: 1px solid var(--line); margin-bottom: 18px;
+  }
+  .toolbar .inner { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  #search { flex: 1; min-width: 200px; padding: 9px 16px; border: 1px solid var(--line);
+    border-radius: 999px; font-size: 14px; background: var(--card); color: var(--ink);
+    transition: border-color .15s ease, box-shadow .15s ease; }
+  #search::placeholder { color: var(--ink-faint); }
+  #search:focus { outline: none; border-color: var(--c-qi); box-shadow: 0 0 0 3px rgba(63,113,130,.14); }
+  .fbtn { padding: 8px 16px; border: 1px solid var(--line); background: var(--card);
+    border-radius: 999px; cursor: pointer; font-size: 13px; color: var(--ink-soft);
+    transition: all .15s ease; }
+  .fbtn:hover { border-color: var(--gold); color: var(--ink); transform: translateY(-1px); }
+  .fbtn.active { background: var(--ink); color: #fff; border-color: var(--ink); box-shadow: 0 4px 12px rgba(46,42,35,.22); }
+  .count { font-size: 13px; color: var(--ink-soft); margin-left: auto; font-variant-numeric: tabular-nums; }
+
+  /* 表格 */
+  table { width: 100%; border-collapse: collapse; background: var(--card);
+    border-radius: 16px; overflow: hidden; box-shadow: var(--shadow); }
+  thead th { background: #efe7d1; color: var(--ink); font-size: 13px; letter-spacing: 1px;
+    padding: 13px 16px; text-align: left; }
+  tbody tr { border-top: 1px solid var(--line); transition: background .12s ease; }
+  tbody tr:not(.vol-sep):hover { background: #faf3e3; }
+  td { padding: 10px 16px; font-size: 14px; vertical-align: middle; }
+  td.idx { color: var(--ink-faint); width: 44px; text-align: center; font-size: 12px; font-variant-numeric: tabular-nums; }
+  td.vol { width: 100px; color: var(--ink-soft); font-size: 13px; white-space: nowrap; }
+  td.title { font-weight: 600; font-family: "Kaiti SC", "STKaiti", "KaiTi", serif; font-size: 15px; letter-spacing: .5px; }
+  td.author { width: 120px; }
+  td.dynasty { width: 70px; color: var(--ink-soft); }
+  .badge { display: inline-block; padding: 3px 11px; border-radius: 999px; font-size: 12px;
+    color: #fff; white-space: nowrap; letter-spacing: .5px; box-shadow: 0 1px 3px rgba(0,0,0,.12); }
+  .b-五言 { background: var(--c-wu); }
+  .b-七言 { background: var(--c-qi); }
+  .b-词 { background: var(--c-ci); }
+  .b-乐府, .b-民歌 { background: var(--c-yue); }
+  .b-四言, .b-其他 { background: var(--c-si); }
+  .vol-sep td { background: linear-gradient(90deg, #f4edd9, #fbf6e9, #f4edd9); color: var(--accent);
+    font-weight: 700; font-size: 13px; padding: 10px 16px; letter-spacing: 2px; }
+  .vol-sep td::before { content: "❖ "; font-size: 11px; color: var(--gold); }
+
+  footer { text-align: center; color: var(--ink-faint); font-size: 12px; margin-top: 30px; line-height: 1.8; }
+  .hidden { display: none !important; }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 28px 14px 64px; }
+    .wrap::before { margin-bottom: 28px; }
+    header h1 { font-size: 27px; letter-spacing: 2px; }
+    .stat-card { padding: 13px 16px; min-width: 80px; }
+    .stat-card .num { font-size: 25px; }
+    table { display: block; overflow-x: auto; white-space: nowrap; border-radius: 12px; }
+    thead th { position: static; }
+    .count { margin-left: 0; width: 100%; text-align: right; }
+  }
+  @media print {
+    .toolbar, .seal, .wrap::before { display: none; }
+    body { background: #fff; }
+    .wrap { max-width: none; padding: 0; }
+    table { box-shadow: none; border: 1px solid #ccc; border-radius: 0; }
+    thead th { position: static; background: #eee; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="seal">诗</div>
+    <h1>小学语文 · 古诗词全表</h1>
+    <div class="divider"><span class="diamond">◆</span></div>
+    <div class="sub">统编版（部编版）1—6 年级 · 共 112 首</div>
+    <div class="src">数据来源：人民教育出版社「微言教育」官方公布篇目</div>
+  </header>
+
+  <div class="stats">
+    <div class="stat-card cat-其他"><div class="num">112</div><div class="lbl">总计</div></div>
+    <div class="stat-card cat-五言"><div class="num">31</div><div class="lbl">五言</div></div><div class="stat-card cat-七言"><div class="num">67</div><div class="lbl">七言</div></div><div class="stat-card cat-词"><div class="num">10</div><div class="lbl">词</div></div><div class="stat-card cat-乐府"><div class="num">2</div><div class="lbl">乐府</div></div><div class="stat-card cat-民歌"><div class="num">1</div><div class="lbl">民歌</div></div><div class="stat-card cat-四言"><div class="num">1</div><div class="lbl">四言</div></div>
+  </div>
+
+  <div class="meta">
+    <div class="row"><span class="label">朝代分布</span><span class="dyn-chip"><b>唐</b> 59 首</span><span class="dyn-chip"><b>宋</b> 35 首</span><span class="dyn-chip"><b>清</b> 6 首</span><span class="dyn-chip"><b>明</b> 2 首</span><span class="dyn-chip"><b>元</b> 1 首</span><span class="dyn-chip"><b>汉</b> 3 首</span><span class="dyn-chip"><b>先秦</b> 1 首</span><span class="dyn-chip"><b>北朝</b> 1 首</span><span class="dyn-chip"><b>近现代</b> 3 首</span><span class="dyn-chip"><b>—</b> 1 首</span></div>
+    <div class="row"><span class="label">高频诗人</span><span class="author-chip">李白<em>9</em></span><span class="author-chip">苏轼<em>6</em></span><span class="author-chip">白居易<em>5</em></span><span class="author-chip">王维<em>5</em></span><span class="author-chip">杨万里<em>4</em></span><span class="author-chip">王安石<em>4</em></span><span class="author-chip">杜甫<em>4</em></span><span class="author-chip">孟浩然<em>3</em></span></div>
+  </div>
+
+  <div class="toolbar">
+    <div class="inner">
+      <input id="search" type="text" placeholder="搜索诗名 / 作者（如：李白、静夜思）">
+      <button class="fbtn active" data-cat="全部">全部</button>
+      <button class="fbtn" data-cat="五言">五言</button>
+      <button class="fbtn" data-cat="七言">七言</button>
+      <button class="fbtn" data-cat="词">词</button>
+      <button class="fbtn" data-cat="乐府">乐府</button>
+      <button class="fbtn" data-cat="民歌">民歌</button>
+      <button class="fbtn" data-cat="四言">四言</button>
+      <span class="count" id="count"></span>
+    </div>
+  </div>
+
+  <table id="poem-table">
+    <thead>
+      <tr>
+        <th>#</th><th>册次</th><th>诗名</th><th>作者</th><th>朝代</th><th>体裁</th>
+      </tr>
+    </thead>
+    <tbody id="tbody"></tbody>
+  </table>
+
+  <footer>
+    说明：教材标注「佚名」者朝代以「—」表示；「近现代」指毛泽东词作；词、乐府、民歌、四言不属五言/七言，单列一类。
+  </footer>
+</div>
+
+<script>
+const RECORDS = [{"idx": 1, "vol": "一年级·上册", "title": "咏鹅", "author": "骆宾王", "dynasty": "唐", "genre": "五言古诗", "cat": "五言"}, {"idx": 2, "vol": "一年级·上册", "title": "江南", "author": "汉乐府", "dynasty": "汉", "genre": "乐府民歌", "cat": "乐府"}, {"idx": 3, "vol": "一年级·上册", "title": "画", "author": "佚名", "dynasty": "—", "genre": "五言绝句", "cat": "五言"}, {"idx": 4, "vol": "一年级·上册", "title": "悯农（其二）", "author": "李绅", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 5, "vol": "一年级·上册", "title": "古朗月行（节选）", "author": "李白", "dynasty": "唐", "genre": "五言古诗", "cat": "五言"}, {"idx": 6, "vol": "一年级·上册", "title": "风", "author": "李峤", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 7, "vol": "一年级·下册", "title": "春晓", "author": "孟浩然", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 8, "vol": "一年级·下册", "title": "赠汪伦", "author": "李白", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 9, "vol": "一年级·下册", "title": "静夜思", "author": "李白", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 10, "vol": "一年级·下册", "title": "寻隐者不遇", "author": "贾岛", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 11, "vol": "一年级·下册", "title": "池上", "author": "白居易", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 12, "vol": "一年级·下册", "title": "小池", "author": "杨万里", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 13, "vol": "一年级·下册", "title": "画鸡", "author": "唐寅", "dynasty": "明", "genre": "七言绝句", "cat": "七言"}, {"idx": 14, "vol": "二年级·上册", "title": "梅花", "author": "王安石", "dynasty": "宋", "genre": "五言绝句", "cat": "五言"}, {"idx": 15, "vol": "二年级·上册", "title": "小儿垂钓", "author": "胡令能", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 16, "vol": "二年级·上册", "title": "登鹳雀楼", "author": "王之涣", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 17, "vol": "二年级·上册", "title": "望庐山瀑布", "author": "李白", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 18, "vol": "二年级·上册", "title": "江雪", "author": "柳宗元", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 19, "vol": "二年级·上册", "title": "夜宿山寺", "author": "李白", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 20, "vol": "二年级·上册", "title": "敕勒歌", "author": "北朝民歌", "dynasty": "北朝", "genre": "民歌", "cat": "民歌"}, {"idx": 21, "vol": "二年级·下册", "title": "村居", "author": "高鼎", "dynasty": "清", "genre": "七言绝句", "cat": "七言"}, {"idx": 22, "vol": "二年级·下册", "title": "咏柳", "author": "贺知章", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 23, "vol": "二年级·下册", "title": "赋得古原草送别（节选）", "author": "白居易", "dynasty": "唐", "genre": "五言律诗", "cat": "五言"}, {"idx": 24, "vol": "二年级·下册", "title": "晓出净慈寺送林子方", "author": "杨万里", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 25, "vol": "二年级·下册", "title": "绝句", "author": "杜甫", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 26, "vol": "二年级·下册", "title": "悯农（其一）", "author": "李绅", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 27, "vol": "二年级·下册", "title": "舟夜书所见", "author": "查慎行", "dynasty": "清", "genre": "五言绝句", "cat": "五言"}, {"idx": 28, "vol": "三年级·上册", "title": "所见", "author": "袁枚", "dynasty": "清", "genre": "五言绝句", "cat": "五言"}, {"idx": 29, "vol": "三年级·上册", "title": "山行", "author": "杜牧", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 30, "vol": "三年级·上册", "title": "赠刘景文", "author": "苏轼", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 31, "vol": "三年级·上册", "title": "夜书所见", "author": "叶绍翁", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 32, "vol": "三年级·上册", "title": "望天门山", "author": "李白", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 33, "vol": "三年级·上册", "title": "饮湖上初晴后雨", "author": "苏轼", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 34, "vol": "三年级·上册", "title": "望洞庭", "author": "刘禹锡", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 35, "vol": "三年级·上册", "title": "早发白帝城", "author": "李白", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 36, "vol": "三年级·上册", "title": "采莲曲", "author": "王昌龄", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 37, "vol": "三年级·下册", "title": "绝句", "author": "杜甫", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 38, "vol": "三年级·下册", "title": "惠崇春江晚景", "author": "苏轼", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 39, "vol": "三年级·下册", "title": "三衢道中", "author": "曾几", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 40, "vol": "三年级·下册", "title": "忆江南", "author": "白居易", "dynasty": "唐", "genre": "词（忆江南）", "cat": "词"}, {"idx": 41, "vol": "三年级·下册", "title": "元日", "author": "王安石", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 42, "vol": "三年级·下册", "title": "清明", "author": "杜牧", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 43, "vol": "三年级·下册", "title": "九月九日忆山东兄弟", "author": "王维", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 44, "vol": "三年级·下册", "title": "滁州西涧", "author": "韦应物", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 45, "vol": "三年级·下册", "title": "大林寺桃花", "author": "白居易", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 46, "vol": "四年级·上册", "title": "鹿柴", "author": "王维", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 47, "vol": "四年级·上册", "title": "暮江吟", "author": "白居易", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 48, "vol": "四年级·上册", "title": "题西林壁", "author": "苏轼", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 49, "vol": "四年级·上册", "title": "雪梅", "author": "卢钺", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 50, "vol": "四年级·上册", "title": "嫦娥", "author": "李商隐", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 51, "vol": "四年级·上册", "title": "出塞", "author": "王昌龄", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 52, "vol": "四年级·上册", "title": "凉州词", "author": "王翰", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 53, "vol": "四年级·上册", "title": "夏日绝句", "author": "李清照", "dynasty": "宋", "genre": "五言绝句", "cat": "五言"}, {"idx": 54, "vol": "四年级·上册", "title": "别董大", "author": "高适", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 55, "vol": "四年级·下册", "title": "宿新市徐公店", "author": "杨万里", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 56, "vol": "四年级·下册", "title": "四时田园杂兴（其二十五）", "author": "范成大", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 57, "vol": "四年级·下册", "title": "清平乐·村居", "author": "辛弃疾", "dynasty": "宋", "genre": "词（清平乐）", "cat": "词"}, {"idx": 58, "vol": "四年级·下册", "title": "卜算子·咏梅", "author": "毛泽东", "dynasty": "近现代", "genre": "词（卜算子）", "cat": "词"}, {"idx": 59, "vol": "四年级·下册", "title": "蜂", "author": "罗隐", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 60, "vol": "四年级·下册", "title": "独坐敬亭山", "author": "李白", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 61, "vol": "四年级·下册", "title": "芙蓉楼送辛渐", "author": "王昌龄", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 62, "vol": "四年级·下册", "title": "塞下曲", "author": "卢纶", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 63, "vol": "四年级·下册", "title": "墨梅", "author": "王冕", "dynasty": "元", "genre": "七言绝句", "cat": "七言"}, {"idx": 64, "vol": "五年级·上册", "title": "蝉", "author": "虞世南", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 65, "vol": "五年级·上册", "title": "乞巧", "author": "林杰", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 66, "vol": "五年级·上册", "title": "示儿", "author": "陆游", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 67, "vol": "五年级·上册", "title": "题临安邸", "author": "林升", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 68, "vol": "五年级·上册", "title": "己亥杂诗", "author": "龚自珍", "dynasty": "清", "genre": "七言绝句", "cat": "七言"}, {"idx": 69, "vol": "五年级·上册", "title": "山居秋暝", "author": "王维", "dynasty": "唐", "genre": "五言律诗", "cat": "五言"}, {"idx": 70, "vol": "五年级·上册", "title": "枫桥夜泊", "author": "张继", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 71, "vol": "五年级·上册", "title": "长相思", "author": "纳兰性德", "dynasty": "清", "genre": "词（长相思）", "cat": "词"}, {"idx": 72, "vol": "五年级·上册", "title": "渔歌子", "author": "张志和", "dynasty": "唐", "genre": "词（渔歌子）", "cat": "词"}, {"idx": 73, "vol": "五年级·上册", "title": "观书有感（其一）", "author": "朱熹", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 74, "vol": "五年级·上册", "title": "观书有感（其二）", "author": "朱熹", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 75, "vol": "五年级·下册", "title": "四时田园杂兴（其三十一）", "author": "范成大", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 76, "vol": "五年级·下册", "title": "稚子弄冰", "author": "杨万里", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 77, "vol": "五年级·下册", "title": "村晚", "author": "雷震", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 78, "vol": "五年级·下册", "title": "鸟鸣涧", "author": "王维", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 79, "vol": "五年级·下册", "title": "凉州词", "author": "王之涣", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 80, "vol": "五年级·下册", "title": "送元二使安西", "author": "王维", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 81, "vol": "五年级·下册", "title": "秋夜将晓出篱门迎凉有感", "author": "陆游", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 82, "vol": "五年级·下册", "title": "黄鹤楼送孟浩然之广陵", "author": "李白", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 83, "vol": "五年级·下册", "title": "寒菊", "author": "郑思肖", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 84, "vol": "五年级·下册", "title": "乡村四月", "author": "翁卷", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 85, "vol": "六年级·上册", "title": "宿建德江", "author": "孟浩然", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 86, "vol": "六年级·上册", "title": "六月二十七日望湖楼醉书", "author": "苏轼", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 87, "vol": "六年级·上册", "title": "西江月·夜行黄沙道中", "author": "辛弃疾", "dynasty": "宋", "genre": "词（西江月）", "cat": "词"}, {"idx": 88, "vol": "六年级·上册", "title": "过故人庄", "author": "孟浩然", "dynasty": "唐", "genre": "五言律诗", "cat": "五言"}, {"idx": 89, "vol": "六年级·上册", "title": "七律·长征", "author": "毛泽东", "dynasty": "近现代", "genre": "七言律诗", "cat": "七言"}, {"idx": 90, "vol": "六年级·上册", "title": "菩萨蛮·大柏地", "author": "毛泽东", "dynasty": "近现代", "genre": "词（菩萨蛮）", "cat": "词"}, {"idx": 91, "vol": "六年级·上册", "title": "春日", "author": "朱熹", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 92, "vol": "六年级·上册", "title": "回乡偶书", "author": "贺知章", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 93, "vol": "六年级·上册", "title": "浪淘沙（其一）", "author": "刘禹锡", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 94, "vol": "六年级·上册", "title": "江南春", "author": "杜牧", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 95, "vol": "六年级·上册", "title": "书湖阴先生壁", "author": "王安石", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 96, "vol": "六年级·下册", "title": "寒食", "author": "韩翃", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 97, "vol": "六年级·下册", "title": "迢迢牵牛星", "author": "《古诗十九首》", "dynasty": "汉", "genre": "五言古诗", "cat": "五言"}, {"idx": 98, "vol": "六年级·下册", "title": "十五夜望月", "author": "王建", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 99, "vol": "六年级·下册", "title": "长歌行", "author": "汉乐府", "dynasty": "汉", "genre": "乐府", "cat": "乐府"}, {"idx": 100, "vol": "六年级·下册", "title": "马诗", "author": "李贺", "dynasty": "唐", "genre": "五言绝句", "cat": "五言"}, {"idx": 101, "vol": "六年级·下册", "title": "石灰吟", "author": "于谦", "dynasty": "明", "genre": "七言绝句", "cat": "七言"}, {"idx": 102, "vol": "六年级·下册", "title": "竹石", "author": "郑燮", "dynasty": "清", "genre": "七言绝句", "cat": "七言"}, {"idx": 103, "vol": "六年级·下册", "title": "采薇（节选）", "author": "《诗经·小雅》", "dynasty": "先秦", "genre": "四言（诗经）", "cat": "四言"}, {"idx": 104, "vol": "六年级·下册", "title": "春夜喜雨", "author": "杜甫", "dynasty": "唐", "genre": "五言律诗", "cat": "五言"}, {"idx": 105, "vol": "六年级·下册", "title": "闻官军收河南河北", "author": "杜甫", "dynasty": "唐", "genre": "七言律诗", "cat": "七言"}, {"idx": 106, "vol": "六年级·下册", "title": "早春呈水部张十八员外", "author": "韩愈", "dynasty": "唐", "genre": "七言绝句", "cat": "七言"}, {"idx": 107, "vol": "六年级·下册", "title": "江上渔者", "author": "范仲淹", "dynasty": "宋", "genre": "五言绝句", "cat": "五言"}, {"idx": 108, "vol": "六年级·下册", "title": "泊船瓜洲", "author": "王安石", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 109, "vol": "六年级·下册", "title": "游园不值", "author": "叶绍翁", "dynasty": "宋", "genre": "七言绝句", "cat": "七言"}, {"idx": 110, "vol": "六年级·下册", "title": "卜算子·送鲍浩然之浙东", "author": "王观", "dynasty": "宋", "genre": "词（卜算子）", "cat": "词"}, {"idx": 111, "vol": "六年级·下册", "title": "浣溪沙", "author": "苏轼", "dynasty": "宋", "genre": "词（浣溪沙）", "cat": "词"}, {"idx": 112, "vol": "六年级·下册", "title": "清平乐", "author": "黄庭坚", "dynasty": "宋", "genre": "词（清平乐）", "cat": "词"}];
+let curCat = '全部';
+let curQ = '';
+
+const tbody = document.getElementById('tbody');
+const searchEl = document.getElementById('search');
+const countEl = document.getElementById('count');
+const btns = document.querySelectorAll('.fbtn');
+
+function matches(r) {
+  if (curCat !== '全部' && r.cat !== curCat) return false;
+  if (curQ) {
+    const q = curQ.toLowerCase();
+    const hay = (r.title + r.author + r.vol + r.dynasty).toLowerCase();
+    if (!hay.includes(q)) return false;
+  }
+  return true;
+}
+
+function render() {
+  let lastVol = '';
+  let html = '';
+  let n = 0;
+  for (const r of RECORDS) {
+    if (!matches(r)) continue;
+    if (r.vol !== lastVol) {
+      lastVol = r.vol;
+      html += `<tr class="vol-sep"><td colspan="6">${r.vol}</td></tr>`;
+    }
+    html += `<tr>
+      <td class="idx">${r.idx}</td>
+      <td class="vol">${r.vol}</td>
+      <td class="title">${r.title}</td>
+      <td class="author">${r.author}</td>
+      <td class="dynasty">${r.dynasty}</td>
+      <td><span class="badge b-${r.cat}">${r.genre}</span></td>
+    </tr>`;
+    n++;
+  }
+  tbody.innerHTML = html;
+  countEl.textContent = '显示 ' + n + ' / ' + RECORDS.length + ' 首';
+}
+
+btns.forEach(b => b.addEventListener('click', () => {
+  btns.forEach(x => x.classList.remove('active'));
+  b.classList.add('active');
+  curCat = b.dataset.cat;
+  render();
+}));
+
+searchEl.addEventListener('input', () => {
+  curQ = searchEl.value.trim();
+  render();
+});
+
+render();
+</script>
+</body>
+</html>
